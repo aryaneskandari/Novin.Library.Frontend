@@ -1,0 +1,30 @@
+:host *{
+  transition: all 500ms ease-in-out ;
+}
+.img{
+  border-radius: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  object-fit: cover;
+  margin-top: 24px;
+  margin-bottom: 10px;
+}
+.hide-header-text{
+  opacity: 0;
+  height: 0 !important;
+}
+@font-face {
+  font-family: 'PS';
+  src: url('../../../../assets/fonts/PeydaWebFaNum-Light.woff');
+}
+span{
+  font-family: 'PS';
+}
+.menu-item{
+  border-right: 5px solid;
+  border-right-color: rgba( 0,0,0,0);
+}
+.selected-menu-item{
+  border-right-color: red;
+
+}
