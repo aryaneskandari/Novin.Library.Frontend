@@ -5,7 +5,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { RouterOutlet } from '@angular/router';
 import { CustomeSidenavComponent } from '../custome-sidenav/custome-sidenav.component';
-import { single } from 'rxjs';
+
 
 @Component({
   selector: 'app-public-nav',
@@ -24,5 +24,5 @@ import { single } from 'rxjs';
 })
 export class PublicNavComponent {
  collapsed=signal(false);
-  sidenavWidth=computed(() => this.collapsed() ? '65px' : '180px');
+  sideNavWidth=computed(() => this.collapsed() ? '65px' : '180px');
 }

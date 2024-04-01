@@ -1,0 +1,21 @@
+mat-toolbar{
+  position: relative;
+  z-index: 5;
+}
+.bg-mat_toolbar{
+  background-color: #003cff !important;
+  color: white;
+}
+mat-sidenav-container{
+  height: calc(100vh - 64px);
+}
+@font-face {
+  font-family: 'PS';
+  src: url('../../../../assets/fonts/PeydaWebFaNum-Light.woff');
+}
+span{
+  font-family: 'PS';
+}
+mat-sidenav,mat-sidenav-content {
+  transition: all ease-in-out 500ms;
+}

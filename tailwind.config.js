@@ -9,6 +9,9 @@ module.exports = {
       },
       fontFamily:{
         'sidebarfont':'PeydaSemiBold'
+      },
+      fontFamily:{
+        'account':'YekanBR'
       }
     },
   },

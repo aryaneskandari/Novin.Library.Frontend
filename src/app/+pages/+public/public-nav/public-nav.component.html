@@ -6,10 +6,10 @@
   </button>
 </mat-toolbar>
 <mat-sidenav-container >
-  <mat-sidenav  opened mode="side" [style.width]="sidenavWidth()" >
+  <mat-sidenav  opened mode="side" [style.width]="sideNavWidth()" >
     <app-custome-sidenav [collapsed]="collapsed()" />
   </mat-sidenav>
-  <mat-sidenav-content class="p-6 " [style.margin-right]="sidenavWidth()">
+  <mat-sidenav-content class="p-6 " [style.margin-right]="sideNavWidth()">
 
     <router-outlet/>
   </mat-sidenav-content>

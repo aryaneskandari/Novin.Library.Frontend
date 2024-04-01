@@ -1,0 +1,17 @@
+<mat-toolbar class="mat-elevation-z3 bg-mat_toolbar ">
+  <button mat-icon-button (click)="collapsed.set(!collapsed())">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span class="flex-auto "></span>
+  <button mat-icon-button >
+    <mat-icon>logout</mat-icon>
+  </button>
+</mat-toolbar>
+<mat-sidenav-container>
+  <mat-sidenav  opened mode="side" [style.width]="sideNavWidth() ">
+    <app-custome-sidenav [collapsed]="collapsed() " />
+  </mat-sidenav>
+  <mat-sidenav-content  [style.margin-right]="sideNavWidth()">
+    <router-outlet/>
+  </mat-sidenav-content>
+</mat-sidenav-container>
