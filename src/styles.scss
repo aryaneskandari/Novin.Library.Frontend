@@ -6,12 +6,11 @@ body { margin: 0;  }
 @tailwind components;
 @tailwind utilities;
 
-
 @font-face {
-  font-family: 'PeydaSemiBold';
-  src: url('./assets/fonts/PeydaWebFaNum-SemiBold.woff');
+  font-family:'PeydaLight' ;
+  src: url('./assets/fonts/PeydaWebFaNum-Light.woff');
 }
 @font-face {
   font-family:'YekanBR' ;
-  src: url(./assets/fonts/YekanBakh-Regular.woff2);
+  src: url('./assets/fonts/YekanBakh-Regular.woff2');
 }

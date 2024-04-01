@@ -8,11 +8,9 @@ module.exports = {
       colors:{
       },
       fontFamily:{
-        'sidebarfont':'PeydaSemiBold'
+        'sidebarfont':'PeydaLight',
+        'account':'YekanBR',
       },
-      fontFamily:{
-        'account':'YekanBR'
-      }
     },
   },
   plugins: [],

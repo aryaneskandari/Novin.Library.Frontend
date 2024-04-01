@@ -2,9 +2,9 @@ mat-sidenav-container{
   height: calc(100vh - 64px);
 }
 .bg-mat_toolbar{
-  background-color: #ff1749e5 !important;
-  color: white;
+  background-color: rgba(127, 0, 212, 0.897);
 }
 mat-sidenav , mat-sidenav-content{
   transition: all 500ms ease-in-out;
 }
+

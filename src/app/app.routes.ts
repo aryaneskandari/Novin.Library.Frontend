@@ -7,6 +7,9 @@ import { LibrariansNavComponent } from './+pages/+librarians/librarians-nav/libr
 import { LibrariansHomeComponent } from './+pages/+librarians/librarians-home/librarians-home.component';
 import { LibrariansBooksComponent } from './+pages/+librarians/librarians-books/librarians-books.component';
 import { LibrariansMembersComponent } from './+pages/+librarians/librarians-members/librarians-members.component';
+import { AdminsNavComponent } from './+pages/+admins/admins-nav/admins-nav.component';
+import { AdminsHomeComponent } from './+pages/+admins/admins-home/admins-home.component';
+import { AdminsLibrariansComponent } from './+pages/+admins/admins-librarians/admins-librarians.component';
 
 export const routes: Routes = [
   {path:'public',component:PublicNavComponent,children:[
@@ -15,6 +18,7 @@ export const routes: Routes = [
     {path:'members',component:PublicMembersComponent},
     {path:'',redirectTo:'home',pathMatch:'prefix'}
   ]},
+
   {path:'librarians',component:LibrariansNavComponent,children:[
     {path:'home',component:LibrariansHomeComponent},
     {path:'books',component:LibrariansBooksComponent},
@@ -23,7 +27,13 @@ export const routes: Routes = [
     {path:'',redirectTo:'home',pathMatch:'prefix'},
     {path:'**',redirectTo:'/home'},
   ]},
-  {path:'',redirectTo:'/librarians',pathMatch:'full'}
-
-
+  // {path:'',redirectTo:'/public',pathMatch:'full'}
+  {path:'admins',component:AdminsNavComponent,children:[
+    {path:'home',component:AdminsHomeComponent},
+    {path:'librarians',component:AdminsLibrariansComponent},
+    {path:'',redirectTo:'home',pathMatch:'prefix'},
+    {path:'**' ,redirectTo:'/home'}
+  ]},
+  {path:'',redirectTo:'/public',pathMatch:'full'},
+  {path:'**',redirectTo:'/public'}
 ];

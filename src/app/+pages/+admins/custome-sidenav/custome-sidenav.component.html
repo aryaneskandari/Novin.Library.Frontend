@@ -1,0 +1,25 @@
+<section class="mb-6 ">
+  <img [width]="profilePicSize()" [height]="profilePicSize()"
+  src="../../../../assets/images/be6138527adcaf0bc42d6bd0339b25b0.png" alt="" class="img ">
+  <section class="pt-6 text-center h-16 " [class.hide-header-text]="sideNavCollapsed()">
+
+      <h2   class="font-sidebarfont  text-purple-600  mx-auto  ">
+        <mat-icon  class="align-bottom">settings</mat-icon>
+        مدیریت
+      </h2>
+      <p  class="font-sidebarfont  text-purple-600  mx-auto ">
+          شایان محمدی
+
+      </p>
+  </section>
+</section>
+<mat-nav-list>
+  @for (item of menuItems(); track $index) {
+    <a class="menu-item" mat-list-item [routerLink]="item.route" routerLinkActive="selected-menu-item" #rla="routerLinkActive" [activated]="rla.isActive">
+      <mat-icon [fontSet]="rla.isActive ? 'material-icons':'material-icons-outlined'" matListItemIcon>{{item.icon}}</mat-icon>
+      @if (!sideNavCollapsed()) {
+        <span  class="font-sidebarfont ">{{item.label}}</span>
+      }
+    </a>
+  }
+</mat-nav-list>

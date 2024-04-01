@@ -1,0 +1,36 @@
+:host *{
+  transition: all 500ms ease-in-out ;
+}
+.header-text{
+  height: 3rem;
+}
+h2{
+
+  line-height: 1.5rem;
+  margin: 0;
+}
+p{
+
+  margin: 0;
+  font-size: 0.8rem;
+}
+
+.hide-header-text{
+  opacity: 0;
+  height: 0px !important;
+}
+.img{
+  border-radius: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  object-fit: cover;
+  margin-top: 24px;
+  margin-bottom: 10px;
+}
+.menu-item{
+  border-right: 5px solid white;
+}
+.selected-menu-item{
+  border-right-color: rgba(127, 0, 212, 0.897);
+  background-color: rgba(213, 2, 255, 0.082) !important;
+}

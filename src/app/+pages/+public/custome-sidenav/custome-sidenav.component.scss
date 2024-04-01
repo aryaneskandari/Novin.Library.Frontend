@@ -13,13 +13,18 @@
   opacity: 0;
   height: 0 !important;
 }
-@font-face {
-  font-family: 'PS';
-  src: url('../../../../assets/fonts/PeydaWebFaNum-Light.woff');
+
+h2{
+
+  line-height: 1.5rem;
+  margin: 0;
 }
-span{
-  font-family: 'PS';
+p{
+
+  margin: 0;
+  font-size: 0.8rem;
 }
+
 .menu-item{
   border-right: 5px solid;
   border-right-color: rgba( 0,0,0,0);
@@ -28,3 +33,4 @@ span{
   border-right-color: red;
 
 }
+

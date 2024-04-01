@@ -1,0 +1,16 @@
+<mat-toolbar class="mat-elevation-z3 relative z-10 bg-mat_toolbar flex-auto justify-between  ">
+  <button mat-icon-button (click)="collapsed.set(!collapsed())">
+    <mat-icon class="text-white ">menu</mat-icon>
+  </button>
+  <button mat-icon-button>
+    <mat-icon class="text-white ">logout</mat-icon>
+  </button>
+</mat-toolbar>
+<mat-sidenav-container >
+  <mat-sidenav opened mode="side" [style.width]="sideNavWidth()  ">
+    <app-custome-sidenav [collapsed]="collapsed()" />
+  </mat-sidenav>
+  <mat-sidenav-content class="p-6 " [style.margin-right]="sideNavWidth()">
+    <router-outlet/>
+  </mat-sidenav-content>
+</mat-sidenav-container>

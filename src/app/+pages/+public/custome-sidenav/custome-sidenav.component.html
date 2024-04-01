@@ -2,17 +2,17 @@
   <img [width]="profilePicSize()" [height]="profilePicSize()"
   src="../../../../assets/images/7995a380c5e28406af7a4b19d76264d6.jpg" alt="" class="img ">
   <section class="pt-6 text-center h-16 " [class.hide-header-text]="sideNavCollapsed()">
-    <h2 class="m-0 text-lg leading-5 font-sidebarfont  ">Your channel</h2>
-    <p class="m-0 text-sm ">Aryan SCK</p>
+    <h2 class="font-sidebarfont  ">Your channel</h2>
+    <p class="font-sidebarfont ">Aryan SCK</p>
   </section>
 </section>
 <mat-nav-list>
     @for (item of menuItems(); track $index) {
 
-      <a mat-list-item class="menu-item" [routerLink]="item.route" routerLinkActive="selected-menu-item" #rla="routerLinkActive" [activated]="rla.isActive">
-        <mat-icon [fontSet]="rla.isActive ? 'material-icons':'material-icons-outlined'" matListItemIcon >{{item.icon}}</mat-icon>
+      <a mat-list-item class="menu-item " [routerLink]="item.route" routerLinkActive="selected-menu-item" #rla="routerLinkActive" [activated]="rla.isActive">
+        <mat-icon  [fontSet]="rla.isActive ? 'material-icons':'material-icons-outlined'" matListItemIcon >{{item.icon}}</mat-icon>
         @if (!sideNavCollapsed()) {
-          <span matListItemTitle >{{item.label}}</span>
+          <span  class="font-sidebarfont" >{{item.label}}</span>
         }
 
       </a>

@@ -1,9 +1,12 @@
-<mat-toolbar class="mat-elevation-z3 relative z-10 bg-mat_toolbar ">
+<mat-toolbar class="mat-elevation-z3 relative z-10 bg-mat_toolbar flex justify-between">
   <button mat-icon-button (click)="collapsed.set(!collapsed())">
     <mat-icon>
       menu
     </mat-icon>
   </button>
+  <span matItemTitle  class="font-account text-sm p-1 md:text-lg md:p-2  text-red-500 bg-red-100 rounded-md  ">
+    سامانه کتابداری آنیا
+  </span>
 </mat-toolbar>
 <mat-sidenav-container >
   <mat-sidenav  opened mode="side" [style.width]="sideNavWidth()" >
