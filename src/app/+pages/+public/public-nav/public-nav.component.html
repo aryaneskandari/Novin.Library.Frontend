@@ -4,13 +4,13 @@
       menu
     </mat-icon>
   </button>
-  <span matItemTitle  class="font-account text-sm p-1 md:text-lg md:p-2  text-red-500 bg-red-100 rounded-md  ">
+  <span matItemTitle  class="font-account text-xs p-1 md:text-md md:p-2  text-red-500 bg-red-100 rounded-md  ">
     سامانه کتابداری آنیا
   </span>
 </mat-toolbar>
 <mat-sidenav-container >
   <mat-sidenav  opened mode="side" [style.width]="sideNavWidth()" >
-    <app-custome-sidenav [collapsed]="collapsed()" />
+    <app-custome-sidenav  [collapsed]="collapsed()" />
   </mat-sidenav>
   <mat-sidenav-content class="p-6 " [style.margin-right]="sideNavWidth()">
 

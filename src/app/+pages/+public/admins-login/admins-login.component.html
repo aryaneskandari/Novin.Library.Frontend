@@ -1,0 +1,45 @@
+<section class="flex items-center justify-center  sm:h-screen   lg:h-96 ">
+  <section class="bg-white p-8 rounded-lg shadow-md   lg:w-80 font-sidebarfont  ">
+    <h1 class="text-center font-sidebarfont text-xs lg:text-2xl ">
+      ورود مدیران</h1>
+    <form [formGroup]="loginForm">
+      <section class="my-2 relative">
+        <label for="username" class="text-xs  lg:text-base	">نام کاربری : </label>
+        <input formControlName="username" type="text" id="username" name="username"
+         class="border border-blue-200 w-full py-2 px-10 rounded-md  outline-none ">
+        <mat-icon class="absolute top-8   right-2   text-gray-500 ">email</mat-icon>
+        @if (loginForm.controls.username.invalid &&
+        (loginForm.controls.username.dirty || loginForm.controls.username.touched)) {
+          @if (loginForm.controls['username'].hasError('required')) {
+            <mat-error class="block  text-red-400 text-xs m-2  "> لطفا <strong> نام کاربری  </strong> وارد کن </mat-error>
+        }
+        @if (loginForm.controls['username'].hasError('email')) {
+          <mat-error class="block  text-red-400 text-xs m-2  ">   ایمیل وارد شده صحیح  <strong>  نیست </strong>   </mat-error>
+      }
+        @if (loginForm.controls['username'].hasError('noSpaceAllowed')) {
+          <mat-error class="block  text-red-400 text-xs m-2  "> فاصله مجاز <strong>نیست</strong></mat-error>
+        }
+      }
+      </section>
+      <section class="mb-3 relative ">
+        <label for="password" class="text-xs lg:text-base ">کلمه عبور :</label>
+        <input formControlName="password" type="password" id="password" name="password"
+        class="border border-blue-200 py-2 px-10  block w-full rounded-md outline-none ">
+        <mat-icon class="absolute top-8   right-2   text-gray-500 ">lock</mat-icon>
+        @if (loginForm.controls.password.invalid &&
+        (loginForm.controls.password.dirty || loginForm.controls.password.touched)) {
+          @if (loginForm.controls['password'].hasError('required')) {
+          <mat-error class="block  text-red-400 text-xs m-2  ">  لطفا  <strong> کلمه عبور </strong> واردکن </mat-error>
+          }
+          @if (loginForm.controls['password'].hasError('noSpaceAllowed')) {
+            <mat-error class="block  text-red-400 text-xs m-2  "> فاصله مجاز <strong>نیست</strong></mat-error>
+          }
+        }
+      </section>
+      <section>
+        <button [disabled]="!loginForm.valid" class="bg-blue-500 hover:bg-blue-600 w-full disabled:bg-blue-200 text-white rounded-md my-2  lg:p-2 ">ورود</button>
+        <button class=" border w-full rounded-md lg:p-2 ">بازگشت</button>
+      </section>
+    </form>
+  </section>
+</section>
