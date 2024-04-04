@@ -12,6 +12,7 @@ import { AdminsHomeComponent } from './+pages/+admins/admins-home/admins-home.co
 import { AdminsLibrariansComponent } from './+pages/+admins/admins-librarians/admins-librarians.component';
 import { AdminsLoginComponent } from './+pages/+public/admins-login/admins-login.component';
 import { LibrariansLoginComponent } from './+pages/+public/librarians-login/librarians-login.component';
+import { LibrariansBorrowsComponent } from './+pages/+librarians/librarians-borrows/librarians-borrows.component';
 
 export const routes: Routes = [
   {path:'public',component:PublicNavComponent,children:[
@@ -27,7 +28,7 @@ export const routes: Routes = [
     {path:'home',component:LibrariansHomeComponent},
     {path:'books',component:LibrariansBooksComponent},
     {path:'members',component:LibrariansMembersComponent},
-    {path:'borrows',component:LibrariansBooksComponent},
+    {path:'borrows',component:LibrariansBorrowsComponent},
     {path:'',redirectTo:'home',pathMatch:'prefix'},
     {path:'**',redirectTo:'/home'},
   ]},

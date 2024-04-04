@@ -1,0 +1,73 @@
+
+<section class="bg-gray-100 flex items-center justify-center h-screen   ">
+
+  <section class="bg-white p-8 rounded-lg shadow-lg w-90 ">
+    <h1 class="text-2xl  mb-4 font-sidebarfont text-center "> مدیریت کتاب</h1>
+
+    <form [formGroup]="bookForm" novalidate >
+
+      <section class="my-2 relative w-52">
+        <label for="id" class="text-sm font-sidebarfont text-gray-500	">شناسه  : </label>
+        <input formControlName="id" type="text" id="id" name="id"
+         class="border border-blue-200 w-full py-2 px-10 rounded-md  outline-none ">
+        <mat-icon class="absolute top-8   right-2   text-gray-500 ">perm_identity</mat-icon>
+      </section>
+
+      <section class="my-2 relative w-52">
+        <label for="id" class="text-sm font-sidebarfont text-gray-500	">عنوان  : </label>
+        <input formControlName="title" type="text" id="title" name="title"
+         class="border border-blue-200 w-full py-2 px-10 rounded-md  outline-none ">
+        <mat-icon class="absolute top-8   right-2   text-gray-500 ">email</mat-icon>
+        @if (bookForm.controls.title.invalid &&
+        (bookForm.controls.title.dirty || bookForm.controls.title.touched)) {
+          @if (bookForm.controls['title'].hasError('required')) {
+            <mat-error class="block font-sidebarfont text-red-400 text-xs m-2  "> لطفا <strong> عنوان </strong> وارد کن </mat-error>
+        }
+      }
+      </section>
+
+      <section class="my-2 relative w-52">
+        <label for="id" class="text-sm font-sidebarfont text-gray-500	">نویسنده  : </label>
+        <input formControlName="writer" type="text" id="writer" name="writer"
+         class="border border-blue-200 w-full py-2 px-10 rounded-md  outline-none ">
+        <mat-icon class="absolute top-8   right-2   text-gray-500 ">person_pin</mat-icon>
+        @if (bookForm.controls.writer.invalid &&
+        (bookForm.controls.writer.dirty || bookForm.controls.writer.touched)) {
+          @if (bookForm.controls['writer'].hasError('required')) {
+            <mat-error class="block font-sidebarfont text-red-400 text-xs m-2  "> لطفا <strong> نویسنده را </strong> وارد کن </mat-error>
+        }
+      }
+      </section>
+
+
+      <section class="my-2 relative w-52">
+        <label for="id" class="text-sm font-sidebarfont text-gray-500	">ناشر  : </label>
+        <input formControlName="publisher" type="text" id="publisher" name="publisher"
+         class="border border-blue-200 w-full py-2 px-10 rounded-md  outline-none ">
+        <mat-icon class="absolute top-8   right-2   text-gray-500 ">publish</mat-icon>
+        @if (bookForm.controls.publisher.invalid &&
+        (bookForm.controls.publisher.dirty || bookForm.controls.publisher.touched)) {
+          @if (bookForm.controls['publisher'].hasError('required')) {
+            <mat-error class="block font-sidebarfont text-red-400 text-xs m-2  "> لطفا <strong> ناشر را </strong> وارد کن </mat-error>
+        }
+      }
+      </section>
+
+      <section class="my-2 relative w-52">
+        <label for="price" class="text-sm font-sidebarfont text-gray-500	">قیمت  : </label>
+        <input type="number" formControlName="price" id="price" name="price"
+         class="border border-blue-200 w-full py-2 px-10 rounded-md  outline-none ">
+        <mat-icon class="absolute top-8   right-2   text-gray-500 ">money</mat-icon>
+
+      </section>
+
+
+        <button  [disabled]="bookForm.invalid" class="bg-blue-500 text-white p-2 w-full rounded-md mt-3 hover:bg-blue-600 disabled:bg-blue-300 font-header ">
+            ثبت
+        </button>
+        <button  class="bg-white text-black p-2 w-full rounded-md mt-3 border  ">بازگشت</button>
+      </form>
+
+  </section>
+</section>
+
