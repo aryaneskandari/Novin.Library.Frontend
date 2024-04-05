@@ -1,12 +1,36 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
+
+import { MatTableModule } from '@angular/material/table';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { Member } from '../../../+models/member';
+import { MemberService } from '../../../+services/member.service';
+
 
 @Component({
   selector: 'app-librarians-members',
   standalone: true,
-  imports: [],
+  imports: [
+    MatTableModule,
+    MatIconModule,
+    MatButtonModule,
+
+  ],
   templateUrl: './librarians-members.component.html',
   styleUrl: './librarians-members.component.scss'
 })
-export class LibrariansMembersComponent {
+export class LibrariansMembersComponent implements OnInit{
+addBook() {
+throw new Error('Method not implemented.');
+}
+  data:Member[]=[];
+  memberService=inject(MemberService);
+
+  ngOnInit(): void {
+    this.data=this.memberService.getMembers();
+  }
+
+
+  displayedColumns: string[] = [ 'fullname', 'phoneNumber','gender', 'major','email','address'];
 
 }

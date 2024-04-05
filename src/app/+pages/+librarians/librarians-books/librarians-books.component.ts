@@ -19,6 +19,7 @@ import { BookDetailsComponent } from './book-details/book-details.component';
   styleUrl: './librarians-books.component.scss'
 })
 export class LibrariansBooksComponent implements OnInit {
+  
 addBook() {
   this.currentAction='add';
 }
