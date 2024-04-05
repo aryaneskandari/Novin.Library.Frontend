@@ -1,0 +1,80 @@
+
+<section class="bg-gray-100 m flex items-center justify-center    ">
+
+  <section class="bg-white  my-2 p-8 rounded-lg shadow-lg w-90 ">
+    <h1 class="text-2xl   mb-4 font-sidebarfont text-center "> مدیریت کاربر</h1>
+
+    <form [formGroup]="memberForm" novalidate >
+
+      <section class="my-2 relative w-52">
+        <label for="id" class="text-sm font-sidebarfont text-gray-500	">شناسه  : </label>
+        <input formControlName="id" type="text" id="id" name="id"
+         class="border border-blue-200 w-full py-2 px-10 rounded-md  outline-none ">
+        <mat-icon class="absolute top-8   right-2   text-gray-500 ">fingerprint</mat-icon>
+      </section>
+
+      <section class="my-2 relative w-52">
+        <label for="fullname" class="text-sm font-sidebarfont text-gray-500	">نام و نام خانوادگی  : </label>
+        <input formControlName="fullname" type="text" id="fullname" name="fullname"
+         class="border border-blue-200 w-full py-2 px-10 rounded-md  outline-none ">
+        <mat-icon class="absolute top-8   right-2   text-gray-500 ">perm_identity</mat-icon>
+        @if (memberForm.controls.fullname.invalid &&
+        (memberForm.controls.fullname.dirty || memberForm.controls.fullname.touched)) {
+          @if (memberForm.controls['fullname'].hasError('required')) {
+            <mat-error class="block font-sidebarfont text-red-400 text-xs m-2  "> لطفا <strong> نام و نام خانوادگی  </strong> وارد کن </mat-error>
+        }
+      }
+      </section>
+
+      <section class="my-2 relative w-52">
+        <label for="phone" class="text-sm font-sidebarfont text-gray-500	">تلفن  : </label>
+        <input formControlName="phone" type="text" id="phone" name="phone"
+         class="border border-blue-200 w-full py-2 px-10 rounded-md  outline-none ">
+        <mat-icon class="absolute top-8   right-2   text-gray-500 ">phone_in_talk</mat-icon>
+        @if (memberForm.controls.phoneNumber.invalid &&
+        (memberForm.controls.phoneNumber.dirty || memberForm.controls.phoneNumber.touched)) {
+          @if (memberForm.controls['phoneNumber'].hasError('required')) {
+            <mat-error class="block font-sidebarfont text-red-400 text-xs m-2  "> لطفا <strong> تلفن را </strong> وارد کن </mat-error>
+        }
+      }
+      </section>
+
+
+      <section class="my-2 relative w-52">
+        <label for="gender" class="text-sm font-sidebarfont text-gray-500	">جنسیت  : </label>
+        <input formControlName="publisher" type="text" id="gender" name="gender"
+         class="border border-blue-200 w-full py-2 px-10 rounded-md  outline-none ">
+        <mat-icon class="absolute top-8   right-2   text-gray-500 ">male</mat-icon>
+        @if (memberForm.controls.gender.invalid &&
+        (memberForm.controls.gender.dirty || memberForm.controls.gender.touched)) {
+          @if (memberForm.controls['gender'].hasError('required')) {
+            <mat-error class="block font-sidebarfont text-red-400 text-xs m-2  "> لطفا <strong> جنسیت را </strong> وارد کن </mat-error>
+        }
+      }
+      </section>
+
+      <section class="my-2 relative w-52">
+        <label for="major" class="text-sm font-sidebarfont text-gray-500	">تحصیلات  : </label>
+        <input type="text" formControlName="major" id="major" name="major"
+         class="border border-blue-200 w-full py-2 px-10 rounded-md  outline-none ">
+        <mat-icon class="absolute top-8   right-2   text-gray-500 ">person_pin</mat-icon>
+
+      </section>
+
+      <section class="my-2 relative w-52">
+        <label for="email" class="text-sm font-sidebarfont text-gray-500	">ایمیل  : </label>
+        <input type="email" formControlName="email" id="email" name="email"
+         class="border border-blue-200 w-full py-2 px-10 rounded-md  outline-none ">
+        <mat-icon class="absolute top-8   right-2   text-gray-500 ">email</mat-icon>
+
+      </section>
+
+        <button  [disabled]="memberForm.invalid" class="bg-blue-500 text-white p-2 w-full rounded-md mt-3 hover:bg-blue-600 disabled:bg-blue-300 font-header ">
+            ثبت
+        </button>
+        <button  class="bg-white text-black p-2 w-full rounded-md mt-3 border  ">بازگشت</button>
+      </form>
+
+  </section>
+</section>
+

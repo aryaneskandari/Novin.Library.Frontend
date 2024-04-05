@@ -1,34 +1,40 @@
-<section>
-  <div class="m-10 ">
-    <button (click)="addBook()" class="bg-blue-500 sm:w-20 sm:h-8 font-thin
-    text-white
-    rounded-md ml-1 text-center hover:bg-blue-700 ">
-    <mat-icon class="align-bottom ">plus_one</mat-icon>
+@if (currentAction!='list') {
+  <app-member-details/>
+}
 
-    افزودن</button>
-    <button (click)="addBook()" class="bg-red-500 sm:w-20 sm:h-8 font-thin
-    text-white
-    rounded-md ml-1 text-center hover:bg-red-700  ">
-    <mat-icon class="align-bottom ">exposure_neg_1</mat-icon>
-    حذف</button>
-    <button (click)="addBook()" class="bg-green-500  sm:w-20 sm:h-8 font-thin
-    text-white
-    rounded-md align-top text-center hover:bg-green-700 ">
-    <mat-icon class="align-bottom ">edit</mat-icon>
+@if (currentAction=='list') {
 
-    ویرایش</button>
-  </div>
+  <section>
+    <div class="m-10 ">
+      <button (click)="addMember()" class="bg-blue-500 sm:w-20 sm:h-8 font-thin
+      text-white
+      rounded-md ml-1 text-center hover:bg-blue-700 ">
+      <mat-icon class="align-bottom ">plus_one</mat-icon>
 
-  
-  <section class="relative overflow-x-auto shadow-lg sm:rounded-lg m-2 lg:mx-16 lg:my-10 ">
+      افزودن</button>
+      <button  class="bg-red-500 sm:w-20 sm:h-8 font-thin
+      text-white
+      rounded-md ml-1 text-center hover:bg-red-700  ">
+      <mat-icon class="align-bottom ">exposure_neg_1</mat-icon>
+      حذف</button>
+      <button  class="bg-green-500  sm:w-20 sm:h-8 font-thin
+      text-white
+      rounded-md align-top text-center hover:bg-green-700 ">
+      <mat-icon class="align-bottom ">edit</mat-icon>
+
+      ویرایش</button>
+    </div>
+  </section>
+
+    <section class="relative overflow-x-auto shadow-lg sm:rounded-lg m-2 lg:mx-16 lg:my-10 ">
 
     <table mat-table [dataSource]="data" class="mat-elevation-z8">
 
       <ng-container matColumnDef="fullname">
         <th mat-header-cell *matHeaderCellDef class="font-sidebarfont text-xs lg:text-base ">
         <mat-icon class="align-bottom  ">perm_identity</mat-icon>
-          نام و نام خانوادگی
-        </th>
+        نام و نام خانوادگی
+      </th>
       <td mat-cell *matCellDef="let element" class="font-sidebarfont"> {{element.fullname}} </td>
     </ng-container>
 
@@ -62,7 +68,7 @@
     <ng-container matColumnDef="email">
       <th mat-header-cell *matHeaderCellDef class="font-sidebarfont text-xs lg:text-base  ">
         <mat-icon class="align-bottom  ">email</mat-icon>
-         ایمیل
+        ایمیل
       </th>
       <td mat-cell *matCellDef="let element" class="font-account ">
         <button class="">
@@ -74,7 +80,7 @@
     <ng-container matColumnDef="address">
       <th mat-header-cell *matHeaderCellDef class="font-sidebarfont text-xs lg:text-base ">
         <mat-icon class="align-bottom  ">place</mat-icon>
-         آدرس
+        آدرس
       </th>
       <td mat-cell *matCellDef="let element" class="font-account ">
         <button class="">
@@ -89,3 +95,4 @@
 </section>
 
 
+}

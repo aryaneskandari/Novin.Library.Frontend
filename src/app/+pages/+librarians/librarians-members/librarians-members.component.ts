@@ -5,6 +5,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { Member } from '../../../+models/member';
 import { MemberService } from '../../../+services/member.service';
+import { MemberDetailsComponent } from './member-details/member-details.component';
+
 
 
 @Component({
@@ -14,15 +16,20 @@ import { MemberService } from '../../../+services/member.service';
     MatTableModule,
     MatIconModule,
     MatButtonModule,
+    MemberDetailsComponent,
 
   ],
   templateUrl: './librarians-members.component.html',
   styleUrl: './librarians-members.component.scss'
 })
 export class LibrariansMembersComponent implements OnInit{
-addBook() {
-throw new Error('Method not implemented.');
-}
+
+  currentAction='list';
+
+  addMember() {
+    this.currentAction='add';
+  }
+
   data:Member[]=[];
   memberService=inject(MemberService);
 
