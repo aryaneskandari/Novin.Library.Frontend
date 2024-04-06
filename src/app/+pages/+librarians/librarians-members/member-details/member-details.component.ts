@@ -6,6 +6,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
+import { CustomValidators } from '../../../../+shared/+validators/noSpaceAllowed.validators';
 
 @Component({
   selector: 'app-member-details',
@@ -27,12 +28,12 @@ import { MatSelectModule } from '@angular/material/select';
 export class MemberDetailsComponent {
   private fb = inject(FormBuilder);
   memberForm = this.fb.group({
-    id: null,
+    id: [null,[Validators.pattern("^[0-9]*$"),CustomValidators.noSpaceAllowed]],
     fullname: [null, Validators.required],
-    phoneNumber: [null, Validators.required],
-    major: [null, Validators.required],
-    gender: [null, Validators.required],
+    phoneNumber: [null, [Validators.required,Validators.pattern("^[0-9]*$"),CustomValidators.noSpaceAllowed]],
+    major: [null,],
+    // gender: [null, Validators.required],
     address: null,
-    email: null,
+    // email: [null,Validators.email],
   });
 }
