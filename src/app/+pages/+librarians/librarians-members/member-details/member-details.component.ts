@@ -30,9 +30,9 @@ export class MemberDetailsComponent {
   memberForm = this.fb.group({
     id: [null,[Validators.pattern("^[0-9]*$"),CustomValidators.noSpaceAllowed]],
     fullname: [null, Validators.required],
-    phoneNumber: [null, [Validators.required,Validators.pattern("^[0-9]*$"),CustomValidators.noSpaceAllowed]],
+    phoneNumber: [null, [Validators.required,Validators.min,Validators.pattern("(09)[0-9 ]{9}"),CustomValidators.noSpaceAllowed]],
     major: [null,],
-    // gender: [null, Validators.required],
+    gender: [null, [Validators.required]],
     address: null,
     // email: [null,Validators.email],
   });

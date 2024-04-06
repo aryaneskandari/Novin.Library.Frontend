@@ -7,6 +7,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
+import { CustomValidators } from '../../../../+shared/+validators/noSpaceAllowed.validators';
 
 
 @Component({
@@ -23,17 +24,18 @@ import { MatIconModule } from '@angular/material/icon';
     ReactiveFormsModule,
     MatIconModule,
     MatButtonModule,
-    
+
   ]
 })
 export class BookDetailsComponent {
   private fb = inject(FormBuilder);
   bookForm = this.fb.group({
-    id: null,
+    id: [null,[Validators.pattern("^[0-9]*$"),CustomValidators.noSpaceAllowed]],
     title: [null, Validators.required],
     writer: [null, Validators.required],
     publisher: [null, Validators.required],
-    price: null,
+    price: [null, [Validators.pattern("^[0-9.]*$")]],
+
   });
 
 

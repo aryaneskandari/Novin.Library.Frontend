@@ -10,7 +10,16 @@
         <label for="id" class="text-sm font-sidebarfont text-gray-500	">شناسه  : </label>
         <input formControlName="id" type="text" id="id" name="id"
          class="border border-blue-200 w-full py-2 px-10 rounded-md  outline-none ">
-        <mat-icon class="absolute top-8   right-2   text-gray-500 ">perm_identity</mat-icon>
+        <mat-icon class="absolute top-8   right-2   text-gray-500 ">fingerprint</mat-icon>
+        @if (bookForm.controls.id.invalid &&
+        (bookForm.controls.id.dirty || bookForm.controls.id.touched)) {
+          @if (bookForm.controls['id'].hasError('pattern')) {
+            <mat-error class="block font-sidebarfont text-red-400 text-xs m-2  "> حروف مجاز <strong> نیست </strong></mat-error>
+        }
+        @if (bookForm.controls['id'].hasError('noSpaceAllowed')) {
+          <mat-error class="block font-sidebarfont text-red-400 text-xs m-2  ">  فاصله مجاز  <strong> نیست </strong></mat-error>
+      }
+      }
       </section>
 
       <section class="my-2 relative w-52">
@@ -55,10 +64,13 @@
 
       <section class="my-2 relative w-52">
         <label for="price" class="text-sm font-sidebarfont text-gray-500	">قیمت  : </label>
-        <input type="number" formControlName="price" id="price" name="price"
+        <input type="text" formControlName="price" id="price" name="price"
          class="border border-blue-200 w-full py-2 px-10 rounded-md  outline-none ">
         <mat-icon class="absolute top-8   right-2   text-gray-500 ">money</mat-icon>
+        @if (bookForm.controls['price'].hasError('pattern')) {
+          <mat-error class="block font-sidebarfont text-red-400 text-xs m-2  "> لطفا حروف وارد <strong>نکن</strong>   </mat-error>
 
+        }
       </section>
 
 
