@@ -29,7 +29,7 @@ export class MemberDetailsComponent {
   private fb = inject(FormBuilder);
   memberForm = this.fb.group({
     id: [null,[Validators.pattern("^[0-9]*$"),CustomValidators.noSpaceAllowed]],
-    fullname: [null, Validators.required],
+    fullname: [null, [Validators.required]],
     phoneNumber: [null, [Validators.required,Validators.min,Validators.pattern("(09)[0-9 ]{9}"),CustomValidators.noSpaceAllowed]],
     major: [null,],
     gender: [null, [Validators.required]],

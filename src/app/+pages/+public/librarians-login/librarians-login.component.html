@@ -4,7 +4,7 @@
       ورود کاربران</h1>
     <form [formGroup]="loginForm">
       <section class="my-2 relative">
-        <label for="username" class="text-xs lg:text-lg ">نام کاربری : </label>
+        <label for="username" class="text-xs lg:text-base font-sidebarfont ">نام کاربری : </label>
         <input formControlName="username" type="text" id="username" name="username"
          class="border border-blue-200 w-full py-2 px-10 rounded-md  outline-none ">
         <mat-icon class="absolute top-8   right-2   text-gray-500 ">person</mat-icon>
@@ -19,7 +19,7 @@
       }
       </section>
       <section class="mb-3 relative ">
-        <label for="password" class="text-xs lg:text-lg ">کلمه عبور :</label>
+        <label for="password" class="text-xs lg:text-base font-sidebarfont ">کلمه عبور :</label>
         <input formControlName="password" type="password" id="password" name="password"
         class="border border-blue-200 py-2 px-10  block w-full rounded-md outline-none ">
         <mat-icon class="absolute top-9   right-2   text-gray-500 ">lock</mat-icon>

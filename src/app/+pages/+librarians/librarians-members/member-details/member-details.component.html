@@ -1,7 +1,7 @@
 
-<section class="  flex items-center justify-center  h-screen  ">
+<section class="  flex items-center justify-center h-screen lg:m-12  ">
 
-  <section class="bg-white  my-2 p-8 rounded-lg shadow-lg w-64 flex justify-center flex-col">
+  <section class="bg-white  my-2 p-8 rounded-lg shadow-lg w-64 flex justify-center items-center flex-col">
     <h1 class="text-2xl   mb-4 font-sidebarfont text-center "> مدیریت کاربر</h1>
 
     <form [formGroup]="memberForm">
@@ -31,9 +31,6 @@
         (memberForm.controls.fullname.dirty || memberForm.controls.fullname.touched)) {
           @if (memberForm.controls['fullname'].hasError('required')) {
           <mat-error class="block  text-red-400 text-xs m-2 font-sidebarfont ">  لطفا  <strong>  نام و نام خانوادگی  </strong> واردکن </mat-error>
-          }
-          @if (memberForm.controls['address'].hasError('noSpaceAllowed')) {
-            <mat-error class="block  text-red-400 text-xs m-2  "> فاصله مجاز <strong>نیست</strong></mat-error>
           }
         }
       </section>
@@ -79,6 +76,7 @@
         <input formControlName="major" type="text" id="major" name="major"
         class="border border-blue-200 py-2 px-10  block w-full rounded-md outline-none ">
         <mat-icon class="absolute top-9   right-2   text-gray-500 ">person_pin</mat-icon>
+
       </section>
 
       <section class="mb-3 relative ">
