@@ -4,7 +4,7 @@
   <section class="bg-white p-8 rounded-lg flex justify-center items-center flex-col shadow-lg w-64 ">
     <h1 class="text-2xl  mb-4 font-sidebarfont text-center "> مدیریت کتاب</h1>
 
-    <form [formGroup]="bookForm" novalidate >
+    <form [formGroup]="bookForm" novalidate (ngSubmit)="submitClick()" >
 
       <section class="my-2 relative w-52">
         <label for="id" class="text-sm font-sidebarfont text-gray-500	">شناسه  : </label>
@@ -77,7 +77,7 @@
         <button  [disabled]="bookForm.invalid" class="bg-blue-500 text-white p-2 w-full rounded-md mt-3 hover:bg-blue-600 disabled:bg-blue-300 font-header ">
             ثبت
         </button>
-        <button  class="bg-white text-black p-2 w-full rounded-md mt-3 border  ">بازگشت</button>
+        <button (click)="onCancel.emit()"  class="bg-white text-black p-2 w-full rounded-md mt-3 border  ">بازگشت</button>
       </form>
 
   </section>

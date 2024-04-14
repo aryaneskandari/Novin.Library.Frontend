@@ -1,7 +1,7 @@
 @if (currentAction!='list') {
 
   <section>
-    <app-book-details/>
+    <app-book-details (onCancel)="cancelClick()" (onOk)="okClick($event)"/>
   </section>
 }
 

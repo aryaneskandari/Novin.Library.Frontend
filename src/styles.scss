@@ -14,3 +14,15 @@ body { margin: 0;  }
   font-family:'YekanBR' ;
   src: url('./assets/fonts/YekanBakh-Regular.woff2');
 }
+.mat-mdc-snack-bar-container {
+  &.success-snackbar {
+    --mdc-snackbar-container-color: rgba(26, 68, 255, 0.904);
+    
+  }
+}
+
+.mat-mdc-snack-bar-container {
+  &.error-snackbar {
+    --mdc-snackbar-container-color: red;
+  }
+}

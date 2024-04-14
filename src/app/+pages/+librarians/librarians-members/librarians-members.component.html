@@ -1,5 +1,5 @@
 @if (currentAction!='list') {
-  <app-member-details/>
+  <app-member-details (onCancel)="cancelClick()" (onOk)="okClick($event)"/>
 }
 
 @if (currentAction=='list') {

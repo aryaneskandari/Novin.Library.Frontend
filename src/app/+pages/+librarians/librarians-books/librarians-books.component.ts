@@ -19,16 +19,24 @@ import { BookDetailsComponent } from './book-details/book-details.component';
   styleUrl: './librarians-books.component.scss'
 })
 export class LibrariansBooksComponent implements OnInit {
-  
-addBook() {
-  this.currentAction='add';
-}
+
+  addBook() {
+    this.currentAction='add';
+  }
   currentAction='list';
 
   data:Book[]=[];
 
   ngOnInit(): void {
     this.data=this.bookService.getBooks();
+  }
+  okClick(book:Book) {
+    this.bookService.addBook(book);
+    this.data=this.bookService.getBooks();
+    this.currentAction='list';
+  }
+  cancelClick(){
+    this.currentAction='list';
   }
   bookService=inject(BookService);
   displayedColumns: string[] = ['id', 'title', 'writer', 'publisher','price'];

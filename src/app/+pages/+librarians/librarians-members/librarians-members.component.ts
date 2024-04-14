@@ -9,6 +9,7 @@ import { MemberDetailsComponent } from './member-details/member-details.componen
 
 
 
+
 @Component({
   selector: 'app-librarians-members',
   standalone: true,
@@ -18,6 +19,8 @@ import { MemberDetailsComponent } from './member-details/member-details.componen
     MatButtonModule,
     MemberDetailsComponent,
 
+
+
   ],
   templateUrl: './librarians-members.component.html',
   styleUrl: './librarians-members.component.scss'
@@ -26,16 +29,24 @@ export class LibrariansMembersComponent implements OnInit{
 
   currentAction='list';
 
-  addMember() {
-    this.currentAction='add';
-  }
-
   data:Member[]=[];
   memberService=inject(MemberService);
 
   ngOnInit(): void {
     this.data=this.memberService.getMembers();
   }
+  cancelClick() {
+    this.currentAction='list';
+  }
+  addMember() {
+    this.currentAction='add';
+  }
+  okClick(member:Member) {
+    this.memberService.addMember(member);
+    this.data=this.memberService.getMembers();
+    this.currentAction='list';
+  }
+
 
 
   displayedColumns: string[] = [ 'fullname', 'phoneNumber','gender', 'major','email','address'];
